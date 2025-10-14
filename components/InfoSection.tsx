@@ -79,7 +79,7 @@ export default function InfoSection() {
             transition={{ duration: 2, repeat: Infinity }}
           >
             <h2
-              className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-indigo-400 mb-6"
+              className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-indigo-400 mb-6"
               style={{ fontFamily: 'Chakra Petch, sans-serif' }}
             >
               ABOUT HACKFEST
@@ -92,7 +92,7 @@ export default function InfoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
-            className="text-gray-300 text-lg md:text-xl font-semibold max-w-4xl mx-auto leading-relaxed"
+            className="text-gray-300 text-base sm:text-lg md:text-xl font-semibold max-w-4xl mx-auto leading-relaxed px-4"
           >
             HackFest is a three-day hackathon powered by{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 font-bold">
@@ -118,7 +118,7 @@ export default function InfoSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16"
         >
-          <div className="flex flex-wrap justify-center items-start gap-6 md:gap-12 px-4 py-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:flex flex-wrap justify-center items-start gap-4 sm:gap-6 md:gap-12 px-2 sm:px-4 py-8 max-w-5xl mx-auto">
             {/* Icons fade UP one by one */}
             {eventData.map((item, index) => (
               <motion.div
@@ -166,12 +166,12 @@ export default function InfoSection() {
                         : {}
                     }
                     transition={{ duration: 0.5 }}
-                    className={`relative p-4 md:p-5 rounded-full bg-gradient-to-br ${item.color} bg-opacity-10 backdrop-blur-sm border-2 border-transparent hover:border-opacity-50`}
+                    className={`relative p-3 sm:p-4 md:p-5 rounded-full bg-gradient-to-br ${item.color} bg-opacity-10 backdrop-blur-sm border-2 border-transparent hover:border-opacity-50`}
                     style={{
                       boxShadow: activeIcon === index ? `0 0 30px ${item.glowColor}` : "none",
                     }}
                   >
-                    <item.icon className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={2} />
+                    <item.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" strokeWidth={2} />
                   </motion.div>
                 </motion.button>
 

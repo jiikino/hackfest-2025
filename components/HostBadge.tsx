@@ -20,7 +20,7 @@ export default function HostBadge({ logos = [] }: HostBadgeProps) {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.5 }}
-      className="fixed top-4 right-4 md:top-6 md:right-6 z-40"
+      className="fixed top-2 right-2 sm:top-4 sm:right-4 md:top-6 md:right-6 z-40"
     >
       <motion.div
         whileHover={{ scale: 1.05 }}
@@ -41,7 +41,7 @@ export default function HostBadge({ logos = [] }: HostBadgeProps) {
         />
 
         {/* Badge Container */}
-        <div className="relative bg-black/80 backdrop-blur-md border border-purple-400/30 rounded-2xl p-3 md:p-4 shadow-lg">
+        <div className="relative bg-black/80 backdrop-blur-md border border-purple-400/30 rounded-2xl p-2 sm:p-3 md:p-4 shadow-lg">
           {/* Corner Accents */}
           <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-purple-400 rounded-tl-2xl" />
           <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-purple-400 rounded-tr-2xl" />
@@ -65,9 +65,9 @@ export default function HostBadge({ logos = [] }: HostBadgeProps) {
             </motion.span>
 
             {/* Side by Side Logos */}
-            <div className="flex flex-row gap-3 md:gap-4">
+            <div className="flex flex-row gap-2 sm:gap-3 md:gap-4">
               {logos.map((logo, index) => (
-                <div key={index} className="relative w-20 h-14 md:w-24 md:h-16 flex items-center justify-center">
+                <div key={index} className="relative w-16 h-12 sm:w-20 sm:h-14 md:w-24 md:h-16 flex items-center justify-center">
                   <Image
                     src={logo.path}
                     alt={logo.name}

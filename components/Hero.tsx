@@ -68,7 +68,7 @@ export default function Hero() {
               }
             }
           }}
-          className="font-stalinist text-6xl md:text-7xl text-center"
+          className="font-stalinist text-4xl sm:text-5xl md:text-7xl text-center"
           style={{
             fontFamily: "'Stalinist One', sans-serif",
           }}
@@ -111,7 +111,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="fixed bottom-8 right-8 z-50"
+          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50"
         >
           {/* Compact Button with Better Background */}
           <motion.a
@@ -168,7 +168,7 @@ export default function Hero() {
               />
               
               {/* Content */}
-              <span className="relative z-10 text-white font-bold font-chakra text-sm md:text-base whitespace-nowrap drop-shadow-lg">
+              <span className="relative z-10 text-white font-bold font-chakra text-xs sm:text-sm md:text-base whitespace-nowrap drop-shadow-lg">
                 REGISTER NOW
               </span>
               

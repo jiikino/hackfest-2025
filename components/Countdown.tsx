@@ -23,7 +23,7 @@ export default function HackFestCountdown() {
         }}
         transition={{ duration: 2, repeat: Infinity }}
         className="relative bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-cyan-400/50 
-                   rounded-xl px-6 py-4 md:px-8 md:py-6 min-w-[80px] md:min-w-[120px] backdrop-blur-sm"
+                   rounded-xl px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-6 min-w-[60px] sm:min-w-[80px] md:min-w-[120px] backdrop-blur-sm"
       >
         {/* Glowing corner accents */}
         <div className="absolute top-0 left-0 w-2 h-2 bg-cyan-400 rounded-tl-xl"></div>
@@ -35,12 +35,12 @@ export default function HackFestCountdown() {
           key={value}
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="text-4xl md:text-6xl font-bold font-chakra text-cyan-400 drop-shadow-[0_0_10px_rgba(0,229,255,0.8)]"
+          className="text-2xl sm:text-3xl md:text-6xl font-bold font-chakra text-cyan-400 drop-shadow-[0_0_10px_rgba(0,229,255,0.8)]"
         >
           {String(value).padStart(2, '0')}
         </motion.span>
       </motion.div>
-      <span className="text-xs md:text-sm text-gray-400 mt-2 uppercase tracking-wider font-semibold font-chakra">
+      <span className="text-[10px] sm:text-xs md:text-sm text-gray-400 mt-2 uppercase tracking-wider font-semibold font-chakra">
         {label}
       </span>
     </motion.div>
@@ -75,13 +75,13 @@ export default function HackFestCountdown() {
           );
         } else {
           return (
-            <div className="flex gap-4 md:gap-6 items-center justify-center">
+            <div className="flex gap-3 sm:gap-4 md:gap-6 items-center justify-center">
               <TimeBox value={days} label="Days" delay={0} />
-              <span className="text-3xl md:text-5xl text-cyan-400 font-bold font-chakra animate-pulse">:</span>
+              <span className="text-2xl sm:text-3xl md:text-5xl text-cyan-400 font-bold font-chakra animate-pulse">:</span>
               <TimeBox value={hours} label="Hours" delay={0.1} />
-              <span className="text-3xl md:text-5xl text-cyan-400 font-bold font-chakra animate-pulse">:</span>
+              <span className="text-2xl sm:text-3xl md:text-5xl text-cyan-400 font-bold font-chakra animate-pulse">:</span>
               <TimeBox value={minutes} label="Minutes" delay={0.2} />
-              <span className="text-3xl md:text-5xl text-cyan-400 font-bold font-chakra animate-pulse">:</span>
+              <span className="text-2xl sm:text-3xl md:text-5xl text-cyan-400 font-bold font-chakra animate-pulse">:</span>
               <TimeBox value={seconds} label="Seconds" delay={0.3} />
             </div>
           );
