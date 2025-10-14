@@ -1,26 +1,10 @@
 "use client";
-import { useCallback } from "react";
 import Particles from "@tsparticles/react";
-import type { Container, Engine } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticlesBackground() {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      console.log("Particles loaded", container);
-    },
-    []
-  );
-
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         background: {
           color: {
@@ -38,7 +22,7 @@ export default function ParticlesBackground() {
               enable: true,
               mode: "repulse",
             },
-            resize: true,
+            resize: { enable: true },
           },
           modes: {
             push: {
@@ -74,9 +58,12 @@ export default function ParticlesBackground() {
           number: {
             density: {
               enable: true,
-              area: 800,
             },
             value: 80,
+            limit: {
+              mode: "delete",
+              value: 0
+            }
           },
           opacity: {
             value: 0.5,
