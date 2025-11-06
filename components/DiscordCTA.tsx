@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { Instagram } from "lucide-react";
 
 export default function DiscordCTA() {
   return (
     <section className="max-w-4xl mx-auto px-6 py-8">
-      <div className="grid md:grid-cols-2 gap-1 items-center">
+      <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Left Side - Animated Discord Icon/Illustration */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -129,81 +130,161 @@ export default function DiscordCTA() {
             Connect with hackers & organizers
           </motion.p>
 
-          {/* Discord Button with same style as Register */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative group inline-block"
-          >
-            {/* Outer Glow Layer */}
+          {/* Social Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
+            {/* Discord Button */}
             <motion.div
-              className="absolute -inset-1 bg-indigo-500/30 rounded-lg blur-md"
-              animate={{
-                scale: [1, 1.15, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Button Container */}
-            <motion.a
-              href="https://discord.gg/MnNsaNTG"
-              target="_blank"
-              rel="noreferrer"
-              whileHover={{
-                scale: 1.05,
-              }}
-              whileTap={{ scale: 0.97 }}
-              className="relative block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="relative group inline-block"
             >
-              {/* Multi-layer Border Glow Effect */}
-              <div className="relative p-[1.5px] rounded-lg bg-gradient-to-r from-indigo-400 via-purple-500 to-indigo-400 shadow-[0_0_12px_rgba(99,102,241,0.4)]">
-                <div className="relative px-3 py-1 bg-black rounded-lg flex items-center gap-1 overflow-hidden group-hover:bg-gray-950 transition-colors">
-                  {/* Animated Scan Line */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/20 to-transparent"
-                    animate={{
-                      x: ["-100%", "200%"],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
+              {/* Outer Glow Layer */}
+              <motion.div
+                className="absolute -inset-1 bg-indigo-500/30 rounded-lg blur-md"
+                animate={{
+                  scale: [1, 1.15, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
 
-                  {/* Content */}
-                  <span className="relative z-10 text-xs">💬</span>
+              {/* Button Container */}
+              <motion.a
+                href="https://discord.gg/MnNsaNTG"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.97 }}
+                className="relative block"
+              >
+                {/* Multi-layer Border Glow Effect */}
+                <div className="relative p-[1.5px] rounded-lg bg-gradient-to-r from-indigo-400 via-purple-500 to-indigo-400 shadow-[0_0_12px_rgba(99,102,241,0.4)]">
+                  <div className="relative px-3 py-1 bg-black rounded-lg flex items-center gap-1 overflow-hidden group-hover:bg-gray-950 transition-colors">
+                    {/* Animated Scan Line */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/20 to-transparent"
+                      animate={{
+                        x: ["-100%", "200%"],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
 
-                  <span
-                    className="relative z-10 text-[9px] md:text-[10px] font-bold text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.8)] tracking-wide"
-                  >
-                    JOIN DISCORD
-                  </span>
+                    {/* Content */}
+                    <span className="relative z-10 text-xs">💬</span>
 
-                  <span className="relative z-10 text-xs">✨</span>
+                    <span
+                      className="relative z-10 text-[9px] md:text-[10px] font-bold text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.8)] tracking-wide"
+                    >
+                      JOIN DISCORD
+                    </span>
+
+                    <span className="relative z-10 text-xs">✨</span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Corner Accents */}
+                {/* Corner Accents */}
+                <motion.div
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute -top-0.5 -left-0.5 w-1 h-1 border-t border-l border-indigo-400"
+                />
+                <motion.div
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  className="absolute -bottom-0.5 -right-0.5 w-1 h-1 border-b border-r border-indigo-400"
+                />
+              </motion.a>
+            </motion.div>
+
+            {/* Instagram Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="relative group inline-block"
+            >
+              {/* Outer Glow Layer */}
               <motion.div
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute -top-0.5 -left-0.5 w-1 h-1 border-t border-l border-indigo-400"
+                className="absolute -inset-1 bg-pink-500/30 rounded-lg blur-md"
+                animate={{
+                  scale: [1, 1.15, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
               />
-              <motion.div
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                className="absolute -bottom-0.5 -right-0.5 w-1 h-1 border-b border-r border-indigo-400"
-              />
-            </motion.a>
-          </motion.div>
+
+              {/* Button Container */}
+              <motion.a
+                href="https://www.instagram.com/hackfest2025/"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.97 }}
+                className="relative block"
+              >
+                {/* Multi-layer Border Glow Effect */}
+                <div className="relative p-[1.5px] rounded-lg bg-gradient-to-r from-pink-400 via-purple-500 to-pink-400 shadow-[0_0_12px_rgba(236,72,153,0.4)]">
+                  <div className="relative px-3 py-1 bg-black rounded-lg flex items-center gap-1 overflow-hidden group-hover:bg-gray-950 transition-colors">
+                    {/* Animated Scan Line */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-400/20 to-transparent"
+                      animate={{
+                        x: ["-100%", "200%"],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
+
+                    {/* Content */}
+                    <Instagram className="relative z-10 w-3 h-3 text-pink-400" />
+
+                    <span
+                      className="relative z-10 text-[9px] md:text-[10px] font-bold text-pink-400 drop-shadow-[0_0_8px_rgba(236,72,153,0.8)] tracking-wide"
+                    >
+                      FOLLOW US
+                    </span>
+
+                    <span className="relative z-10 text-xs">✨</span>
+                  </div>
+                </div>
+
+                {/* Corner Accents */}
+                <motion.div
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute -top-0.5 -left-0.5 w-1 h-1 border-t border-l border-pink-400"
+                />
+                <motion.div
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  className="absolute -bottom-0.5 -right-0.5 w-1 h-1 border-b border-r border-pink-400"
+                />
+              </motion.a>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

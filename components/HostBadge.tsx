@@ -5,6 +5,7 @@ import Image from "next/image";
 interface Logo {
   path: string;
   name: string;
+  link?: string;
 }
 
 interface HostBadgeProps {
@@ -66,16 +67,49 @@ export default function HostBadge({ logos = [] }: HostBadgeProps) {
 
             {/* Side by Side Logos */}
             <div className="flex flex-row gap-2 sm:gap-3 md:gap-4">
-              {logos.map((logo, index) => (
-                <div key={index} className="relative w-16 h-12 sm:w-20 sm:h-14 md:w-24 md:h-16 flex items-center justify-center">
-                  <Image
-                    src={logo.path}
-                    alt={logo.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              ))}
+              {logos.map((logo, index) => {
+                const LogoWrapper = logo.link ? motion.a : motion.div;
+                const linkProps = logo.link 
+                  ? { 
+                      href: logo.link, 
+                      target: "_blank", 
+                      rel: "noreferrer",
+                    } 
+                  : {};
+
+                return (
+                  <LogoWrapper
+                    key={index}
+                    {...linkProps}
+                    className="relative w-16 h-12 sm:w-20 sm:h-14 md:w-24 md:h-16 flex items-center justify-center cursor-pointer group"
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {/* Hover Glow Effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-purple-400/20 rounded-lg blur-md opacity-0 group-hover:opacity-100"
+                      transition={{ duration: 0.3 }}
+                    />
+                    
+                    <Image
+                      src={logo.path}
+                      alt={logo.name}
+                      fill
+                      className="object-contain relative z-10 transition-all duration-300 group-hover:brightness-110"
+                    />
+                    
+                    {/* Tooltip */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileHover={{ opacity: 1, y: 0 }}
+                      className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-purple-500 text-white text-[8px] px-2 py-1 rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      Follow {logo.name}
+                    </motion.div>
+                  </LogoWrapper>
+                );
+              })}
             </div>
           </div>
 
