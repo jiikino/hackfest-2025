@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
 
+// HackFest 2025 - Community Section
 export default function DiscordCTA() {
   return (
     <section className="max-w-4xl mx-auto px-6 py-8">
