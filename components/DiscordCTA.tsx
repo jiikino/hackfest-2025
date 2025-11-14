@@ -157,7 +157,7 @@ export default function DiscordCTA() {
 
               {/* Button Container */}
               <motion.a
-                href="https://discord.gg/qe8HNn9T"
+                href="https://discord.gg/b5Rp8eUv"
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{
